@@ -1,11 +1,11 @@
-import './style.css';
+import './style/PostCard.scss';
 
 const PostCard = (cardDetails) => {
     console.log(cardDetails);
     var detail = cardDetails.cardDetails;
     // console.log(detail);
     return (
-        <div className='card-container'>
+        <div className='card-container' >
             {detail.map((post) => {
                 return (
                     <div className="post-card" key={post.id}>
