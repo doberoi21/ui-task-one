@@ -1,0 +1,31 @@
+$navbar-background-color:#4D4D4D;
+$navbar-tab-font-color: #FFF4E0;
+$navbar-tab-font-size:20px;
+
+.navbar-container{
+    height: 8vh;
+    width: 100%;
+    background-color:$navbar-background-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.tab-name{
+    color: $navbar-tab-font-color;
+    font-size: $navbar-tab-font-size;
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+    .navbar-container{
+        height: 10vh;
+        flex-direction: column;
+    }
+    .tab-name{
+        font-size:  $navbar-tab-font-size - 5px;
+    }
+}

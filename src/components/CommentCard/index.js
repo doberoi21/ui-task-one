@@ -1,8 +1,9 @@
-import './style.css';
+import './style/CommentCard.scss';
 
 const CommentCard = (cardDetails) => {
+
     console.log(cardDetails);
-    var detail = cardDetails.cardDetails;
+    let detail = cardDetails.cardDetails;
     // console.log(detail);
     return (
         <div className='card-container'>
