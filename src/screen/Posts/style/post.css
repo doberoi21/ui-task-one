@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.all-cards-conatiner {
+  margin-bottom: 50px;
+}
+
 @media screen and (max-width: 800px) {
   .page-heading {
     font-size: 20px;

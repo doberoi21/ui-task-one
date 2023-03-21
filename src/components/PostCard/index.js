@@ -1,7 +1,7 @@
 import './style/PostCard.scss';
 
 const PostCard = (cardDetails) => {
-    console.log(cardDetails);
+    // console.log(cardDetails);
     var detail = cardDetails.cardDetails;
     // console.log(detail);
     return (

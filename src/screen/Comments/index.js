@@ -8,24 +8,29 @@ const CommentScreen = () => {
   const [commentPaginatedData, setCommentPaginatedData] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
 
-  window.addEventListener('scroll', () => {
+  window.onscroll = function(event) {
     const scrollabeHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = window.scrollY;
 
     if(scrollabeHeight===scrolled){
       setPageNumber(prev=>prev+1);
     }
+};
 
-  })
 
   const fetchCommentData = async () => {
-    const commentResponse = await fetch(
-      "https://jsonplaceholder.typicode.com/comments"
-    );
-    // console.log("Comment ",commentResponse.json()); 
-    const data=await commentResponse.json();
-    setCommentData(data);
-    setPageNumber(1);
+    try{
+      const commentResponse = await fetch(
+        "https://jsonplaceholder.typicode.com/comments"
+      );
+      // console.log("Comment ",commentResponse.json()); 
+      const data=await commentResponse.json();
+      setCommentData(data);
+      setPageNumber(1);
+    }catch(err){
+      console.log("Error ",err);
+    }
+    
   };
 
   useEffect(() => {
@@ -35,8 +40,6 @@ const CommentScreen = () => {
   useEffect(() => {
     if (commentData.length) {
       const newPaginatedData = getPaginatedData(commentData, pageNumber);
-      // console.log("Paginated",newPaginatedData);
-      // console.log("page",pageNumber);
       setCommentPaginatedData(newPaginatedData);
     }
   }, [pageNumber]);

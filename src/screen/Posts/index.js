@@ -8,15 +8,14 @@ const PostScreen = () => {
   const [postPaginatedData, setPostPaginatedData] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
 
-  window.addEventListener('scroll', () => {
+  window.onscroll = function(event) {
     const scrollabeHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = window.scrollY;
 
     if(scrollabeHeight===scrolled){
       setPageNumber(prev=>prev+1);
     }
-
-  })
+};
 
 
   const fetchPostData = async () => {
@@ -38,7 +37,7 @@ const PostScreen = () => {
     if (postData.length) {
       const newPaginatedData = getPaginatedData(postData, pageNumber);
       // console.log("Paginated",newPaginatedData);
-      // console.log("page",pageNumber);
+      console.log("page",pageNumber);
       setPostPaginatedData(newPaginatedData);
     }
   }, [pageNumber]);

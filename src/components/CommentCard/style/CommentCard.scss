@@ -1,6 +1,7 @@
 $comment-card-name-font-size:15px;
 $comment-card-email-font-size:13px;
 $comment-card-body-font-size:12px;
+$card-background-color: rgb(218, 207, 194);
 
 .card-container{
     display: flex;
@@ -13,7 +14,7 @@ $comment-card-body-font-size:12px;
 
 .comment-card{
     border:1.5px solid black;
-    background-color: rgb(218, 207, 194);
+    background-color: $card-background-color;
     padding: 10px 10px;
     width: 20%;
     margin: 2px 0;
